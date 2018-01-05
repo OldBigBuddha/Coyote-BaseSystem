@@ -73,8 +73,4 @@ public class Deck {
         mCards.remove(0);
         return status;
     }
-
-    public void remove() {
-
-    }
 }

@@ -5,7 +5,7 @@ import kyoto.freeprojects.oldbigbuddha.coyote.basesytem.Deck;
 
 public abstract class Player {
 
-    private String mName;
+    protected String mName;
     protected CardStatus mStatus;
     private int mLife;
 
@@ -14,7 +14,7 @@ public abstract class Player {
         mLife = 3;
     }
 
-    public abstract int turn();
+    public abstract String turn();
 
     public Deck draw(Deck deck) {
         mStatus = deck.drawn();
@@ -25,10 +25,20 @@ public abstract class Player {
         mLife--;
     }
 
+    public abstract void die();
+
     public CardStatus getStatus() {
         return mStatus;
     }
     public int getCardNumber() {return  mStatus.getStatus();}
+
+    public String getName() {
+        return mName;
+    }
+
+    public int getLife() {
+        return mLife;
+    }
 
     @Override
     public String toString() {

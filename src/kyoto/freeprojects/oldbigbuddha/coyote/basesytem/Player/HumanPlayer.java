@@ -10,17 +10,16 @@ public class HumanPlayer extends Player {
     }
 
     @Override
-    public int turn() {
+    public String turn() {
 
         print( "あなたが思う合計（コヨーテは-1）：" );
         while (true) {
-            try {
-                return Integer.parseInt(new Scanner(System.in).next());
-            } catch (NumberFormatException e) {
-                println("数値を入力して下さい");
-            }
+            return new Scanner(System.in).next();
         }
     }
 
-
+    @Override
+    public void die() {
+        println( mName + "は死んだ" );
+    }
 }

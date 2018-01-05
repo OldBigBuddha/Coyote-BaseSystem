@@ -57,17 +57,17 @@ public class Main {
             // プレイヤーが答えた数字
             // -1だとCoyote
             // TODO: マイナスがプラスを上回ったときの回答と被る
-            int playerNumber = player.turn();
-            if (playerNumber == -1) {
-                break;
-            } else {
-                // マイナスカードがプラスカードの枚数を上回る可能性がある
-                nowNumber = playerNumber;
-            }
+//            int playerNumber = player.turn();
+//            if (playerNumber == -1) {
+//                break;
+//            } else {
+//                // マイナスカードがプラスカードの枚数を上回る可能性がある
+//                nowNumber = playerNumber;
+//            }
             println("Now : "    + nowNumber);
             println("Answer : " + answer);
         }
-        judge();
+//        judge();
     }
 
     /**
@@ -87,9 +87,9 @@ public class Main {
             players.add(player);
         }
 
-        for (Player player : players) {
-            System.out.println( player.toString() );
-        }
+//        for (Player player : players) {
+//            System.out.println( player.toString() );
+//        }
         calcAnswer();
     }
 
