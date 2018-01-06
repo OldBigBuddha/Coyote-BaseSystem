@@ -15,9 +15,11 @@ public class CoyoteTest {
     public static void main(String[] args) {
 
         List<Player> players = new ArrayList<>();
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < Coyote.NUMBER_OF_MEMBERS; i++) {
             players.add( new HumanPlayer("Player" + (i + 1)) );
+            println( players.get(i).getName() );
         }
+        println();
 
         Coyote coyote = new Coyote();
         coyote.setPlayers(players);
@@ -30,7 +32,8 @@ public class CoyoteTest {
             for (CardStatus status: coyote.getOtherCardStatus()) {
                 println( status.toString() );
             }
-            print("数を入力してください：");
+            println(  "Answer is " + coyote.getCurrentAnswer() );
+            print( currentPlayerName + "：");
             if (!coyote.turn( new Scanner(System.in).next() )) {
                 continue;
             } else {
@@ -39,6 +42,9 @@ public class CoyoteTest {
                     println( currentPlayerName + "勝利");
                 } else {
                     println( currentPlayerName + "敗北" );
+                }
+                for (Player player: coyote.getPlayers() ) {
+                    println( player.getName() + ':' + player.getLife() );
                 }
             }
 

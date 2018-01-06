@@ -5,9 +5,7 @@ import kyoto.freeprojects.oldbigbuddha.coyote.basesytem.Player.Player;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 
-import static kyoto.freeprojects.oldbigbuddha.coyote.basesytem.Utils.println;
 
 public class Coyote {
 
@@ -27,6 +25,11 @@ public class Coyote {
      * プレイヤーを管理するList
      * */
     private List<Player> mPlayers = new ArrayList<>();
+
+    public List<Player> getPlayers() {
+        return mPlayers;
+    }
+
     /**
      * ターン数
      * 初期値は０
@@ -40,10 +43,15 @@ public class Coyote {
      * ユーザが持っているカードの中で最も大きい数
      * */
     private int maxNumber = 0;
+
     /**
      * ユーザが持っているカードの数字の合計
      * */
     private int mCurrentAnswer = 0;
+
+    public int getCurrentAnswer() {
+        return mCurrentAnswer;
+    }
 
     private int mLastPlayerNumber;
 
@@ -73,7 +81,7 @@ public class Coyote {
             return true;
         } else {
             // マイナスカードがプラスカードの枚数を上回る可能性がある
-            mCurrentAnswer = Integer.parseInt(playerAnswer);
+            mNowAnswer = Integer.parseInt(playerAnswer);
         }
         return false;
     }
