@@ -76,7 +76,7 @@ public class Coyote {
 
     public boolean turn(String playerAnswer) throws NumberFormatException {
         mTurnCount++;
-        mLastPlayerNumber =  mTurnCount % NUMBER_OF_MEMBERS;
+        mLastPlayerNumber =  mTurnCount % NUMBER_OF_MEMBERS - 1;
         if (playerAnswer.equals("coyote")) {
             return true;
         } else {
